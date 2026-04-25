@@ -1,8 +1,9 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Briefcase, Map, Mic, MessageSquare, GraduationCap, Sparkles } from "lucide-react";
+import { Briefcase, Map, Mic, MessageSquare, GraduationCap, Sparkles, Brain } from "lucide-react";
 
 const links = [
   { to: "/", label: "Басты", icon: Sparkles },
+  { to: "/ai-test", label: "AI Тест", icon: Brain },
   { to: "/jobs", label: "Вакансиялар", icon: Briefcase },
   { to: "/map", label: "Карта", icon: Map },
   { to: "/voice-resume", label: "AI резюме", icon: Mic },
@@ -52,15 +53,15 @@ export function SiteHeader() {
         </Link>
       </div>
       {/* Mobile bottom nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 grid grid-cols-6 border-t border-border bg-card">
-        {links.map((l) => {
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 grid grid-cols-7 border-t border-border bg-card">
+        {links.slice(0, 7).map((l) => {
           const Icon = l.icon;
           const active = location.pathname === l.to;
           return (
             <Link
               key={l.to}
               to={l.to}
-              className={`flex flex-col items-center gap-0.5 py-2 text-[10px] ${
+              className={`flex flex-col items-center gap-0.5 py-2 text-[9px] ${
                 active ? "text-primary" : "text-muted-foreground"
               }`}
             >

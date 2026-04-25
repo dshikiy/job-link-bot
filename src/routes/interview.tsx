@@ -10,7 +10,7 @@ export const Route = createFileRoute("/interview")({
       { title: "AI Mock Interview — HR-мен жаттығу" },
       { name: "description", content: "Виртуалды HR-мен жаттығып, нақты сұхбатқа дайын болыңыз." },
       { property: "og:title", content: "AI Mock Interview — MJB" },
-      { property: "og:description", content: "Стрестен арыл — AI HR-менеджермен жаттық." },
+      { property: "og:image", content: "/og-image.svg" },
     ],
   }),
   component: Interview,

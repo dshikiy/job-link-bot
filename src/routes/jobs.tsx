@@ -14,7 +14,7 @@ export const Route = createFileRoute("/jobs")({
       { title: "Вакансиялар Ақтау бойынша — Mangystau Job Bridge" },
       { name: "description", content: "Ақтау микрорайондары бойынша белсенді вакансиялар. AI matching және карта арқылы іздеу." },
       { property: "og:title", content: "Вакансиялар — Mangystau Job Bridge" },
-      { property: "og:description", content: "Ақтау бойынша жұмыс іздеуге арналған AI платформа." },
+      { property: "og:image", content: "/og-image.svg" },
     ],
   }),
   component: JobsPage,

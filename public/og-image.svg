@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="50%" style="stop-color:#2d5a7b"/>
+      <stop offset="100%" style="stop-color:#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#d4a853"/>
+      <stop offset="100%" style="stop-color:#f0d78c"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Wave pattern -->
+  <path d="M0 400 Q300 350 600 400 T1200 400 V630 H0 Z" fill="#0f2744" opacity="0.5"/>
+  <path d="M0 450 Q300 400 600 450 T1200 450 V630 H0 Z" fill="#0f2744" opacity="0.3"/>
+  
+  <!-- Logo circle -->
+  <circle cx="200" cy="315" r="80" fill="url(#gold)"/>
+  <text x="200" y="325" text-anchor="middle" font-family="system-ui" font-size="48" font-weight="bold" fill="#1e3a5f">MJB</text>
+  
+  <!-- Title -->
+  <text x="450" y="250" font-family="system-ui" font-size="72" font-weight="bold" fill="white">Mangystau</text>
+  <text x="450" y="330" font-family="system-ui" font-size="48" fill="url(#gold)">Job Bridge</text>
+  
+  <!-- Tagline -->
+  <text x="450" y="390" font-family="system-ui" font-size="24" fill="#a0c4e8">AI жұмыс іздеу платформасы</text>
+  <text x="450" y="420" font-family="system-ui" font-size="20" fill="#7aa3c7">Ақтау · Маңғыстау</text>
+  
+  <!-- Features -->
+  <rect x="450" y="450" width="700" height="3" fill="url(#gold)" opacity="0.5"/>
+  
+  <g transform="translate(480, 490)">
+    <circle cx="15" cy="15" r="8" fill="url(#gold)"/>
+    <text x="35" y="22" font-family="system-ui" font-size="18" fill="white">AI Тест</text>
+  </g>
+  <g transform="translate(580, 490)">
+    <circle cx="15" cy="15" r="8" fill="url(#gold)"/>
+    <text x="35" y="22" font-family="system-ui" font-size="18" fill="white">Карта</text>
+  </g>
+  <g transform="translate(680, 490)">
+    <circle cx="15" cy="15" r="8" fill="url(#gold)"/>
+    <text x="35" y="22" font-family="system-ui" font-size="18" fill="white">Голосовое резюме</text>
+  </g>
+  <g transform="translate(860, 490)">
+    <circle cx="15" cy="15" r="8" fill="url(#gold)"/>
+    <text x="35" y="22" font-family="system-ui" font-size="18" fill="white">Mock Interview</text>
+  </g>
+  
+  <!-- Bottom wave -->
+  <path d="M0 630 Q300 580 600 630" stroke="url(#gold)" stroke-width="4" fill="none"/>
+</svg>

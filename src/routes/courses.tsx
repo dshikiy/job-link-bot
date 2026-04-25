@@ -9,7 +9,7 @@ export const Route = createFileRoute("/courses")({
       { title: "Тегін микро-курстар — Mangystau Job Bridge" },
       { name: "description", content: "Официант, бариста, админ дағдылары — 1 күнде, тегін, сертификатпен." },
       { property: "og:title", content: "Тегін курстар — MJB" },
-      { property: "og:description", content: "Жұмысқа дайын болыңыз — Trust Score жинаңыз." },
+      { property: "og:image", content: "/og-image.svg" },
     ],
   }),
   component: Courses,

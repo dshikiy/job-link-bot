@@ -10,7 +10,7 @@ export const Route = createFileRoute("/voice-resume")({
       { title: "Голосовое → AI резюме — Mangystau Job Bridge" },
       { name: "description", content: "30 секунд айтыңыз, AI сізге кәсіби резюме жасайды. Ақтаулық жастарға тегін." },
       { property: "og:title", content: "AI Голосовое резюме — MJB" },
-      { property: "og:description", content: "Жазудың қажеті жоқ — айтыңыз, біз форматтаймыз." },
+      { property: "og:image", content: "/og-image.svg" },
     ],
   }),
   component: VoiceResume,

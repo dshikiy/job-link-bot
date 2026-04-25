@@ -7,7 +7,7 @@ import { VacancyCard, type Vacancy } from "@/components/VacancyCard";
 import heroImg from "@/assets/hero-aktau.jpg";
 import {
   Mic, Map, MessageSquare, Sparkles, Zap, Award,
-  Briefcase, ArrowRight, Bot, GraduationCap, ShieldCheck,
+  Briefcase, ArrowRight, Bot, GraduationCap, ShieldCheck, Brain,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Маңғыстау жастары мен бизнесін AI арқылы байланыстыратын цифрлық экожүйе. Голосовое → резюме, карта, mock интервью." },
       { property: "og:title", content: "Mangystau Job Bridge" },
       { property: "og:description", content: "Ақтау бойынша AI-көмегімен жұмыс табыңыз — карта, голосовое резюме, mock интервью." },
-      { property: "og:image", content: "/og-cover.jpg" },
+      { property: "og:image", content: "/og-image.svg" },
     ],
   }),
   component: Index,
@@ -131,11 +131,17 @@ function Index() {
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <Feature
+              icon={Brain}
+              title="AI Тест"
+              text="5 сұрақ арқылы өзіңізге қолайлы мамандықты анықтаңыз. AI анализ."
+              to="/ai-test"
+              accent
+            />
+            <Feature
               icon={Map}
               title="Интерактивті карта"
               text="Ақтаудың 13 микрорайоны бойынша вакансияларды визуалды табыңыз."
               to="/map"
-              accent
             />
             <Feature
               icon={Mic}
@@ -159,12 +165,6 @@ function Index() {
               icon={GraduationCap}
               title="Тегін микро-курстар"
               text="Официант, бариста, админ дағдылары — 1 күнде. Сертификатпен."
-              to="/courses"
-            />
-            <Feature
-              icon={ShieldCheck}
-              title="Trust Score"
-              text="Курс + растаулар = жоғары рейтинг. Жұмыс берушілер «Алтын кандидатты» бірден көреді."
               to="/courses"
             />
           </div>

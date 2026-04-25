@@ -12,7 +12,7 @@ export const Route = createFileRoute("/map")({
       { title: "Ақтау вакансия картасы — Mangystau Job Bridge" },
       { name: "description", content: "Ақтаудың барлық микрорайондары бойынша вакансиялардың интерактивті картасы." },
       { property: "og:title", content: "Интерактивті карта — Mangystau Job Bridge" },
-      { property: "og:description", content: "Микрорайон бойынша жұмыс орындарын картадан көріңіз." },
+      { property: "og:image", content: "/og-image.svg" },
     ],
   }),
   component: MapPage,

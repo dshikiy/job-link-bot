@@ -11,7 +11,7 @@ export const Route = createFileRoute("/employer")({
       { title: "Жұмыс берушіге — AI вакансия парсинг" },
       { name: "description", content: "Жай мәтін жазыңыз — AI оны кәсіби вакансияға айналдырады." },
       { property: "og:title", content: "Жұмыс берушіге — MJB" },
-      { property: "og:description", content: "Telegram ботсыз да, тура сайтта вакансия жариялаңыз." },
+      { property: "og:image", content: "/og-image.svg" },
     ],
   }),
   component: Employer,
