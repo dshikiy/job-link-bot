@@ -1,1 +1,10 @@
-project_id = "gbxuzcoowzxfuetmbsdx"
+project_id = "fb47369a-edeb-4ff6-837b-00b80fc4c827"
+
+[functions.voice-resume]
+verify_jwt = false
+
+[functions.mock-interview]
+verify_jwt = false
+
+[functions.parse-vacancy]
+verify_jwt = false
