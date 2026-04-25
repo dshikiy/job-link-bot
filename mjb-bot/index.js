@@ -197,6 +197,10 @@ ${vacancy.isUrgent ? '🔥 *Статус:* СРОЧНО' : '✓ *Статус:* 
   `);
 });
 
+// Render сервері ботты өшіріп тастамауы үшін керек "заглушка"
+const http = require('http');
+http.createServer((req, res) => res.end('Bot is alive!')).listen(process.env.PORT || 3000);
+
 // Handle "Добавить вакансию" button
 bot.hears('➕ Добавить вакансию', async (ctx) => {
   await ctx.replyWithMarkdown(`
