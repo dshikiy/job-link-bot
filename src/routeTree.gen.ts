@@ -9,10 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VoiceResumeRouteImport } from './routes/voice-resume'
 import { Route as MapRouteImport } from './routes/map'
 import { Route as JobsRouteImport } from './routes/jobs'
+import { Route as InterviewRouteImport } from './routes/interview'
+import { Route as EmployerRouteImport } from './routes/employer'
+import { Route as CoursesRouteImport } from './routes/courses'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VoiceResumeRoute = VoiceResumeRouteImport.update({
+  id: '/voice-resume',
+  path: '/voice-resume',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MapRoute = MapRouteImport.update({
   id: '/map',
   path: '/map',
@@ -23,6 +32,21 @@ const JobsRoute = JobsRouteImport.update({
   path: '/jobs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InterviewRoute = InterviewRouteImport.update({
+  id: '/interview',
+  path: '/interview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmployerRoute = EmployerRouteImport.update({
+  id: '/employer',
+  path: '/employer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoursesRoute = CoursesRouteImport.update({
+  id: '/courses',
+  path: '/courses',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,36 +55,81 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/courses': typeof CoursesRoute
+  '/employer': typeof EmployerRoute
+  '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/map': typeof MapRoute
+  '/voice-resume': typeof VoiceResumeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/courses': typeof CoursesRoute
+  '/employer': typeof EmployerRoute
+  '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/map': typeof MapRoute
+  '/voice-resume': typeof VoiceResumeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/courses': typeof CoursesRoute
+  '/employer': typeof EmployerRoute
+  '/interview': typeof InterviewRoute
   '/jobs': typeof JobsRoute
   '/map': typeof MapRoute
+  '/voice-resume': typeof VoiceResumeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/jobs' | '/map'
+  fullPaths:
+    | '/'
+    | '/courses'
+    | '/employer'
+    | '/interview'
+    | '/jobs'
+    | '/map'
+    | '/voice-resume'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/jobs' | '/map'
-  id: '__root__' | '/' | '/jobs' | '/map'
+  to:
+    | '/'
+    | '/courses'
+    | '/employer'
+    | '/interview'
+    | '/jobs'
+    | '/map'
+    | '/voice-resume'
+  id:
+    | '__root__'
+    | '/'
+    | '/courses'
+    | '/employer'
+    | '/interview'
+    | '/jobs'
+    | '/map'
+    | '/voice-resume'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CoursesRoute: typeof CoursesRoute
+  EmployerRoute: typeof EmployerRoute
+  InterviewRoute: typeof InterviewRoute
   JobsRoute: typeof JobsRoute
   MapRoute: typeof MapRoute
+  VoiceResumeRoute: typeof VoiceResumeRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/voice-resume': {
+      id: '/voice-resume'
+      path: '/voice-resume'
+      fullPath: '/voice-resume'
+      preLoaderRoute: typeof VoiceResumeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/map': {
       id: '/map'
       path: '/map'
@@ -75,6 +144,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JobsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/interview': {
+      id: '/interview'
+      path: '/interview'
+      fullPath: '/interview'
+      preLoaderRoute: typeof InterviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/employer': {
+      id: '/employer'
+      path: '/employer'
+      fullPath: '/employer'
+      preLoaderRoute: typeof EmployerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/courses': {
+      id: '/courses'
+      path: '/courses'
+      fullPath: '/courses'
+      preLoaderRoute: typeof CoursesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,8 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CoursesRoute: CoursesRoute,
+  EmployerRoute: EmployerRoute,
+  InterviewRoute: InterviewRoute,
   JobsRoute: JobsRoute,
   MapRoute: MapRoute,
+  VoiceResumeRoute: VoiceResumeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
