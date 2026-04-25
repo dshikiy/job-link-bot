@@ -14,7 +14,155 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      applications: {
+        Row: {
+          candidate_id: string
+          cover_message: string | null
+          created_at: string
+          id: string
+          match_score: number | null
+          status: string | null
+          vacancy_id: string
+        }
+        Insert: {
+          candidate_id: string
+          cover_message?: string | null
+          created_at?: string
+          id?: string
+          match_score?: number | null
+          status?: string | null
+          vacancy_id: string
+        }
+        Update: {
+          candidate_id?: string
+          cover_message?: string | null
+          created_at?: string
+          id?: string
+          match_score?: number | null
+          status?: string | null
+          vacancy_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "applications_vacancy_id_fkey"
+            columns: ["vacancy_id"]
+            isOneToOne: false
+            referencedRelation: "vacancies"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          certificates: string[] | null
+          created_at: string
+          district: string | null
+          experience_years: number | null
+          full_name: string | null
+          generated_resume: Json | null
+          id: string
+          skills: string[] | null
+          trust_score: number | null
+          updated_at: string
+          voice_resume_url: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          certificates?: string[] | null
+          created_at?: string
+          district?: string | null
+          experience_years?: number | null
+          full_name?: string | null
+          generated_resume?: Json | null
+          id: string
+          skills?: string[] | null
+          trust_score?: number | null
+          updated_at?: string
+          voice_resume_url?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          certificates?: string[] | null
+          created_at?: string
+          district?: string | null
+          experience_years?: number | null
+          full_name?: string | null
+          generated_resume?: Json | null
+          id?: string
+          skills?: string[] | null
+          trust_score?: number | null
+          updated_at?: string
+          voice_resume_url?: string | null
+        }
+        Relationships: []
+      }
+      vacancies: {
+        Row: {
+          company: string
+          created_at: string
+          currency: string | null
+          description: string | null
+          district: string
+          employer_id: string | null
+          employment_type: string | null
+          id: string
+          is_urgent: boolean | null
+          raw_text: string | null
+          requirements: string[] | null
+          salary_max: number | null
+          salary_min: number | null
+          skills: string[] | null
+          status: string | null
+          title: string
+          updated_at: string
+          views: number | null
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          district: string
+          employer_id?: string | null
+          employment_type?: string | null
+          id?: string
+          is_urgent?: boolean | null
+          raw_text?: string | null
+          requirements?: string[] | null
+          salary_max?: number | null
+          salary_min?: number | null
+          skills?: string[] | null
+          status?: string | null
+          title: string
+          updated_at?: string
+          views?: number | null
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          currency?: string | null
+          description?: string | null
+          district?: string
+          employer_id?: string | null
+          employment_type?: string | null
+          id?: string
+          is_urgent?: boolean | null
+          raw_text?: string | null
+          requirements?: string[] | null
+          salary_max?: number | null
+          salary_min?: number | null
+          skills?: string[] | null
+          status?: string | null
+          title?: string
+          updated_at?: string
+          views?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
